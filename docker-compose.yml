@@ -1,0 +1,24 @@
+version: "3.8"
+
+# execute `docker-compose up`
+# create and start multiple containers in one command!
+
+services:
+  redis-binance:
+    image: redis
+    ports:
+      - "6379:6379"
+    working_dir: /binance
+    volumes:
+      - redis-data:/var/lib/redis/channel_1
+
+  redis-upbit:
+    image: redis
+    ports:
+      - "7379:7379"
+    working_dir: /channel_2
+    volumes:
+      - redis-data:/var/lib/redis/channel_2
+
+volumes:
+  redis-data:
