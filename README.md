@@ -15,7 +15,8 @@ Just practice and follow the step for loading multiple redis servers on docker
 2. Configure `redis.conf` for dividing server port
 3. Make your custom image file including `redis.conf` on `/data` (default directory)
 4. `docker build` using Dockerfile \
-    Dockerfile has directory making process logging and store data and move `redis.conf` to where `redis-server` exists
+    Dockerfile has directory making process logging and store data and \
+    move `redis.conf` to where `redis-server` exists
 
 5. ~ing
 
