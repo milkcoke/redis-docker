@@ -4,21 +4,21 @@ version: "3.8"
 # create and start multiple containers in one command!
 
 services:
-  redis-binance:
-    image: redis
+  redis-channel1:
+    image: redis-double
     ports:
-      - "6379:6379"
-    working_dir: /binance
-    volumes:
-      - redis-data:/var/lib/redis/channel_1
+      - "8000:6379"
+    working_dir: /data
+#    volumes:
+#      - redis-data:/var/lib/redis/channel_1
 
-  redis-upbit:
-    image: redis
+  redis-channel2:
+    image: redis-double
     ports:
-      - "7379:7379"
-    working_dir: /channel_2
-    volumes:
-      - redis-data:/var/lib/redis/channel_2
+      - "7100:6379"
+    working_dir: /data
+#    volumes:
+#      - redis-data:/var/lib/redis/channel_2
 
 volumes:
   redis-data:
